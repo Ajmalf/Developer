@@ -1,0 +1,105 @@
+#include<iostream>
+
+using namespace std;
+
+main()
+
+{
+
+int choice, qty, price=0, bill=0;
+
+char again;
+
+
+cout<<"\n\n\t\t *** Menu ***\n";
+
+cout<<"\n\tEnter 1 for Pizza (Rs. 999)";
+
+cout<<"\n\tEnter 2 for Burger (Rs. 250)";
+
+cout<<"\n\tEnter 3 for Sandwich (Rs. 150)";
+
+cout<<"\n\tEnter 4 for Paratha Roll (Rs. 200)";
+
+do
+
+{
+
+cout<<"\n\n\tEnter Item number according to menu : "; cin>>choice;
+
+cout<<"\tEnter quantity of selected : ";
+
+cin>>qty;
+
+if(choice==1)
+ 
+{
+
+price = qty * 999;
+
+}
+
+else if(choice==2)
+
+{
+
+price = qty * 250;
+
+}
+
+else if(choice==3)
+
+
+{
+
+price = qty * 150;
+
+}
+
+else if(choice==4)
+
+{
+
+price = qty * 200;
+
+}
+
+else
+
+{
+
+cout<<"Sorry! Invalid choice";
+
+}
+
+bill = bill + price;
+
+cout<<"\tDo you want to select anyother item ? (y for Yes) : "; cin>>again;
+
+}while(again=='y' || again == 'Y');
+
+float gst= (float) bill*19/100;
+
+float total = bill + gst;
+
+float disc=0;
+
+if(total>1000)
+
+{
+
+disc=total*5/100;
+
+total=total-disc;
+
+}
+
+cout<<"\n\tPrice of Items : "<<bill;
+
+cout<<"\n\tAmount of GST : "<<gst;
+
+cout<<"\n\tDiscount : "<<disc;
+
+cout<<"\n\tPayable Amount : "<<total;
+
+}
